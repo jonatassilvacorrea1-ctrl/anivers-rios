@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Bia!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="screen active" id="screen1">
+        <div class="card">
+            <h1>🎁</h1>
+            <h2>Oi, Bia!</h2>
+            <p>Como você está? Vamo fazer umas brincadeiras?</p>
+            <button onclick="goToScreen(2)">Bora lá!</button>
+        </div>
+    </section>
+
+    <section class="screen" id="screen2">
+        <div class="card">
+            <h1>😌</h1>
+            <h2>Então...</h2>
+            <p>Será que tu estás preparada?</p>
+            <button onclick="startQuiz()">Eu já nasci preparada</button>
+        </div>
+    </section>
+
+    <section class="screen" id="screen3">
+        <div class="card">
+            <h3 id="question-counter"></h3>
+            <h2 id="question"></h2>
+            <div id="answers"></div>
+            <p id="error"></p>
+        </div>
+    </section>
+
+    <section class="screen" id="screen4">
+        <div class="card">
+            <h1>🎉</h1>
+            <h2>Parabéns!</h2>
+            <p>Acertou tudo!</p>
+            <p>Tenho um negócio pra tu.</p>
+            <button onclick="showCake()">Abrir surpresa</button>
+        </div>
+    </section>
+
+    <section class="screen" id="screen5">
+        <div class="card">
+            <h2>🎉 Feliz aniversário, Bia! 🎉</h2>
+            
+            <div class="cake">
+                <div class="candles">
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                    <div class="candle"></div>
+                </div>
+                <div class="icing"></div>
+                <div class="cake-text">BIA 🎀</div>
+            </div>
+
+            <p>Que os seus 17 anos sejam incríveis!</p>
+            <button onclick="blowCandles()">Soprar as velas</button>
+        </div>
+    </section>
+
+    <section class="screen" id="screen6">
+        <div class="card">
+            <h1>✨</h1>
+            <h2>Faça um pedido...</h2>
+            <p>Feche os olhos por alguns segundos e pense em algo que você deseja muito.</p>
+        </div>
+    </section>
+
+    <section class="screen" id="screen7">
+        <div class="card message-card">
+            <h1>❤️</h1>
+            <h2>Feliz aniversário, Bia!</h2>
+            <p>Hoje você completa 17 anos.</p>
+            <p>Quero que saiba que você é uma pessoa muito especial.</p>
+            <p>Obrigado por todas as conversas, brincadeiras, momentos engraçados e memórias que compartilhamos.</p>
+            <p>Espero que este novo ano da sua vida seja cheio de felicidade, saúde, conquistas e muitas risadas.</p>
+            <p>Continue sendo essa pessoa única que consegue ser Bia, Mãe, Estranha e Galinha ao mesmo tempo. 🐔</p>
+            <p>Feliz aniversário! 🎉</p>
+            <button onclick="goToScreen(8)">Continuar</button>
+        </div>
+    </section>
+
+    <section class="screen" id="screen8">
+        <div class="card">
+            <h1>🌸</h1>
+            <h2>E só mais uma coisa...</h2>
+            <h1 class="big-text">FELIZ ANIVERSÁRIO!</h1>
+            <p>🎉🎉🎉</p>
+        </div>
+    </section>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

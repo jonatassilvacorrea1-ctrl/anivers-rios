@@ -1,17 +1,17 @@
 const questions = [
     {
-        question: "Qual a melhor fala?",
-        answers: ["Cocoricorihaaaaaaaa", "Quiridu", "Só uma depenadinha"],
-        correct: 0
+        question: "Qual o melhor casal?",
+        answers: ["Capizur", "Shenpi", "Nenhuma das anteriores, o melhor é cada um ser completo sozinho"],
+        correct: 2
     },
     {
-        question: "Qual o filho favorito da Indira?",
-        answers: ["Capi", "Amora", "Ela não tem filhos favoritos, amo todos igualmente"],
+        question: "Qual a melhor cor?",
+        answers: ["Verde", "Ciano", "Azul"],
         correct: 1
     },
     {
-        question: "Jonas é:",
-        answers: ["Gay", "Incrível", "Hétero"],
+        question: "Felipe é:",
+        answers: ["Irmãozão", "Amigão", "Todas as anteriores"],
         correct: 2
     }
 ];

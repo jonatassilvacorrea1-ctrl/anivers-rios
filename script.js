@@ -1,18 +1,18 @@
 const questions = [
     {
-        question: "Qual o melhor casal?",
-        answers: ["Capizur", "Shenpi", "Nenhuma das anteriores, o melhor é cada um ser completo sozinho"],
+        question: "Quem o Jonatas ama mais?",
+        answers: ["Eliane", "Pietro", "O Jonatas ama os dois igualmente"],
         correct: 2
     },
     {
-        question: "Qual a melhor cor?",
-        answers: ["Verde", "Ciano", "Azul"],
+        question: "Qual a melhor comida?",
+        answers: ["Carne", "Farofa de Frango Empanado", "Calabresa"],
         correct: 1
     },
     {
-        question: "Felipe é:",
-        answers: ["Irmãozão", "Amigão", "Todas as anteriores"],
-        correct: 2
+        question: "Eliane é:",
+        answers: ["Maravilhosa", "Chorona", "Linda", "Vaca", "Inteligente", "Todas as anteriores"],
+        correct: 5
     }
 ];
 

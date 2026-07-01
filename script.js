@@ -6,8 +6,8 @@ const questions = [
     },
     {
         question: "Qual o seu filho favorito??",
-        answers: ["Jonatas", "Jaquelinhe", "Nenhum, amo os meus dois filhos igualmente"],
-        correct: 1
+        answers: ["Jonatas", "Jaqueline", "Nenhum, amo os meus dois filhos igualmente"],
+        correct: 2
     },
     {
         question: "Everaldo é:",

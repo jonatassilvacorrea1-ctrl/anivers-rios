@@ -74,28 +74,37 @@ function showCake() {
 }
 
 function blowCandles() {
-    // Apaga as chamas das velas
+    console.log("Botão soprar clicado!");
+
+    // 1. Apaga as chamas das velas
     document.querySelectorAll('.candle').forEach(candle => {
         candle.classList.add('extinguished');
     });
 
-    // Pequena explosão de confetes nos cantos ao soprar
-    if (typeof confetti === 'function') {
-        confetti({ particleCount: 40, angle: 60, spread: 55, origin: { x: 0 } });
-        confetti({ particleCount: 40, angle: 120, spread: 55, origin: { x: 1 } });
+    // 2. Tenta soltar os confetes se a biblioteca carregou
+    try {
+        if (typeof confetti === 'function') {
+            confetti({ particleCount: 40, angle: 60, spread: 55, origin: { x: 0 } });
+            confetti({ particleCount: 40, angle: 120, spread: 55, origin: { x: 1 } });
+        }
+    } catch (e) {
+        console.log("Erro nos confetes, mas o site vai continuar:", e);
     }
 
-    // Espera 2 segundos com as velas apagadas e vai para a tela do pedido (Screen 6)
+    // 3. MUDANÇA DE TELA COM SEGURANÇA
+    // Vamos esperar 2 segundos (2000 milissegundos) com a vela apagada
     setTimeout(() => {
+        console.log("Passaram 2 segundos, indo para a tela 6...");
+        
+        // Força a exibição da tela 6 tirando as outras
         goToScreen(6);
         
-        // Espera 5 segundos na tela do pedido e vai para a carta (Screen 7)
+        // Espera mais 4 segundos na tela do pedido e vai para a tela 7 da carta
         setTimeout(() => {
+            console.log("Passaram mais 4 segundos, indo para a tela 7...");
             goToScreen(7);
-            if (typeof confetti === 'function') {
-                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-            }
-        }, 5000);
+        }, 4000);
+
     }, 2000);
 }
 

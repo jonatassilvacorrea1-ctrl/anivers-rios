@@ -1,17 +1,17 @@
 const questions = [
     {
-        question: "Quem o Jonatas ama mais?",
-        answers: ["Eliane", "Pietro", "O Jonatas ama os dois igualmente"],
-        correct: 2
-    },
-    {
-        question: "Qual a melhor comida?",
-        answers: ["Carne", "Farofa de Frango Empanado", "Calabresa"],
+        question: "Era melhor ter ido assistir o jogo do:?",
+        answers: ["Brasil", "Pelé", "Nenhum, futebol paia"],
         correct: 1
     },
     {
-        question: "Eliane é:",
-        answers: ["Maravilhosa", "Chorona", "Linda", "Vaca", "Inteligente", "Todas as anteriores"],
+        question: "Qual o seu filho favorito??",
+        answers: ["Jonatas", "Jaquelinhe", "Nenhum, amo os meus dois filhos igualmente"],
+        correct: 1
+    },
+    {
+        question: "Everaldo é:",
+        answers: ["Paizão", "Palhaço", "Impossível", "Herói", "Amigo", "Todas as anteriores"],
         correct: 5
     }
 ];
@@ -68,15 +68,70 @@ function showCake() {
     goToScreen(5);
     const music = document.getElementById("music");
     music.play().catch(() => {});
+    
+    // Confetes ao abrir o bolo
+    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
 }
 
 function blowCandles() {
-    document.querySelector(".candles").innerHTML = "💨";
+    // Apaga as chamas das velas
+    document.querySelectorAll('.candle').forEach(candle => {
+        candle.classList.add('extinguished');
+    });
+
+    // Pequena explosão de confetes nos cantos ao soprar
+    confetti({ particleCount: 40, angle: 60, spread: 55, origin: { x: 0 } });
+    confetti({ particleCount: 40, angle: 120, spread: 55, origin: { x: 1 } });
 
     setTimeout(() => {
         goToScreen(6);
         setTimeout(() => {
             goToScreen(7);
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
         }, 5000);
-    }, 1500);
+    }, 2000);
+}
+
+// LÓGICA DO CARTÃO RASPADINHA (SISTEMA CANVAS)
+function initScratchCard() {
+    goToScreen(9);
+    
+    const canvas = document.getElementById('scratch-canvas');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+
+    // Desenha a camada cinza por cima
+    ctx.fillStyle = '#b0b0b0';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Adiciona um texto por cima para indicar que é para raspar
+    ctx.fillStyle = '#666';
+    ctx.font = '16px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('💡 Raspe aqui com o dedo', canvas.width / 2, canvas.height / 2);
+
+    // Função que apaga o cinza
+    function scratch(e) {
+        if (!isDrawing) return;
+        
+        const rect = canvas.getBoundingClientRect();
+        // Suporte para mouse ou touch de celular
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 20, 0, Math.PI * 2); // Tamanho do "dedo" que raspa
+        ctx.fill();
+    }
+
+    // Eventos de Mouse
+    canvas.addEventListener('mousedown', () => isDrawing = true);
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mousemove', scratch);
+
+    // Eventos de Touch (Celular)
+    canvas.addEventListener('touchstart', () => isDrawing = true);
+    canvas.addEventListener('touchend', () => isDrawing = false);
+    canvas.addEventListener('touchmove', scratch);
 }

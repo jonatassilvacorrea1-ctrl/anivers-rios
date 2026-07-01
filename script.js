@@ -80,14 +80,21 @@ function blowCandles() {
     });
 
     // Pequena explosão de confetes nos cantos ao soprar
-    confetti({ particleCount: 40, angle: 60, spread: 55, origin: { x: 0 } });
-    confetti({ particleCount: 40, angle: 120, spread: 55, origin: { x: 1 } });
+    if (typeof confetti === 'function') {
+        confetti({ particleCount: 40, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 40, angle: 120, spread: 55, origin: { x: 1 } });
+    }
 
+    // Espera 2 segundos com as velas apagadas e vai para a tela do pedido (Screen 6)
     setTimeout(() => {
         goToScreen(6);
+        
+        // Espera 5 segundos na tela do pedido e vai para a carta (Screen 7)
         setTimeout(() => {
             goToScreen(7);
-            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            if (typeof confetti === 'function') {
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            }
         }, 5000);
     }, 2000);
 }

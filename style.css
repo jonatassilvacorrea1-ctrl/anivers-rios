@@ -6,8 +6,8 @@
 
 body{
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-    /* Alterado para um degradê azul sofisticado masculino */
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    /* Estilo Gamer/Steam: Degradê de azul escuro profundo para cinza espacial */
+    background: linear-gradient(135deg, #171a21, #1b2838, #2a475e);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -25,9 +25,9 @@ body{
     display: flex;
 }
 
-/* --- MELHORIA NOS CARDS --- */
+/* --- CARDS ESTILO DARK/GLASS --- */
 .card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: 40px;
@@ -35,8 +35,8 @@ body{
     text-align: center;
     max-width: 500px;
     width: 100%;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     animation: fadeIn .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -45,19 +45,21 @@ h1{
 }
 
 h2{
-    color: #1e3c72;
+    color: #1b2838;
     margin-bottom: 20px;
 }
 
 p{
     margin-bottom: 15px;
     line-height: 1.6;
-    color: #333;
+    color: #222;
 }
 
-/* --- DESIGN DOS BOTÕES (Tons de Azul e Ouro) --- */
+/* --- BOTÕES TECH ESTILO STEAM --- */
 button {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #107c11, #00d2ff); /* Mistura de verde conquista com azul ciano */
+    background: linear-gradient(135deg, #1f4068, #162447);
+    background: linear-gradient(135deg, #47bfff, #1a7cc1);
     color: white;
     border: none;
     padding: 14px 30px;
@@ -68,13 +70,13 @@ button {
     letter-spacing: 0.5px;
     transition: all .3s ease;
     margin-top: 15px;
-    box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+    box-shadow: 0 5px 15px rgba(71, 191, 255, 0.3);
 }
 
 button:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(30, 60, 114, 0.5);
-    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    box-shadow: 0 8px 20px rgba(71, 191, 255, 0.5);
+    background: linear-gradient(135deg, #1a7cc1, #47bfff);
 }
 
 button:active {
@@ -100,12 +102,12 @@ button:active {
 
 .big-text{
     font-size: 2.2rem;
-    color: #d4af37; /* Cor Dourada Festiva */
+    color: #107c11; /* Verde Gamer para o Prêmio */
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* --- ESTILIZAÇÃO DO BOLO (Bolo Azul com Cobertura Branca) --- */
+/* --- ESTILIZAÇÃO DO BOLO TECH --- */
 #screen5 .card {
     display: flex;
     flex-direction: column;
@@ -120,7 +122,7 @@ button:active {
     position: relative;
     width: 260px;
     height: 150px;
-    background: linear-gradient(#2a5298, #1e3c72);
+    background: linear-gradient(#2a475e, #1b2838);
     margin: 40px auto 30px auto;
     border-radius: 15px;
 }
@@ -150,10 +152,10 @@ button:active {
     top: 70px;
     width: 100%;
     text-align: center;
-    color: #f1c40f; /* Nome dourado no bolo */
+    color: #00d2ff; /* Nome ciano neon no bolo */
     font-weight: bold;
     font-size: 1.4rem;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
 /* --- VELAS --- */
@@ -169,7 +171,7 @@ button:active {
 .candle{
     width: 12px;
     height: 40px;
-    background: linear-gradient(to right, #d4af37, #f3e5ab); /* Velas Douradas */
+    background: linear-gradient(to right, #00d2ff, #2a475e);
     border-radius: 3px;
     position: relative;
 }
@@ -200,7 +202,7 @@ button:active {
     transform: translateX(-50%);
     width: 4px;
     height: 10px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.3);
     border-radius: 50%;
     animation: fadeSmoke 1.5s forwards;
 }
@@ -209,14 +211,14 @@ button:active {
     max-height: 85vh;
     overflow-y: auto;
     padding-right: 15px;
-    text-align: left; /* Alinhamento melhor para ler a carta */
+    text-align: left;
 }
 
 .message-card h2, .message-card h1 {
     text-align: center;
 }
 
-/* --- ESTILO DA LINHA DO TEMPO (MURAL) --- */
+/* --- MURAL DE FOTOS DE AMIGOS --- */
 .timeline {
     display: flex;
     flex-direction: column;
@@ -226,16 +228,16 @@ button:active {
 }
 
 .timeline-item {
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.04);
     padding: 15px;
     border-radius: 15px;
-    border-left: 4px solid #1e3c72;
+    border-left: 4px solid #47bfff;
 }
 
 .timeline-photo {
     width: 100%;
     max-height: 250px;
-    background: #e0e0e0;
+    background: #dcdcdc;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -253,10 +255,10 @@ button:active {
 .timeline-caption {
     font-size: 14px;
     margin-bottom: 0;
-    color: #444;
+    color: #333;
 }
 
-/* --- ESTILO DA RASPADINHA --- */
+/* --- BOX DA RASPADINHA --- */
 .scratch-container {
     position: relative;
     width: 300px;
@@ -264,9 +266,9 @@ button:active {
     margin: 20px auto;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-    background: #fff;
-    border: 2px dashed #1e3c72;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    background: #ffffff;
+    border: 2px dashed #47bfff;
 }
 
 .scratch-secret {

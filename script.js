@@ -1,17 +1,17 @@
 const questions = [
     {
-        question: "Era melhor ter ido assistir o jogo do:?",
-        answers: ["Brasil", "Pelé", "Nenhum, futebol paia"],
+        question: "Quem é melhor?",
+        answers: ["Lufy", "Naruto", "Goku"],
         correct: 1
     },
     {
-        question: "Qual o seu filho favorito??",
-        answers: ["Jonatas", "Jaqueline", "Nenhum, amo os meus dois filhos igualmente"],
-        correct: 2
+        question: "Qual o melhor amigo do Pietro?",
+        answers: ["Jonatas", "Victor", "Algum marginal da vila"],
+        correct: 0
     },
     {
-        question: "Everaldo é:",
-        answers: ["Paizão", "Palhaço", "Impossível", "Herói", "Amigo", "Todas as anteriores"],
+        question: "Pietro é:",
+        answers: ["Baixo", "Hello Kitty", "Fofinho", "Melhor jogador de vólei", "Amigo", "Todas as anteriores"],
         correct: 5
     }
 ];
